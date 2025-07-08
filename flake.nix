@@ -1,5 +1,5 @@
 {
-  description = "Satisfactory Modeler Flake";
+  description = "Exiled Exchange 2 Flake";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
