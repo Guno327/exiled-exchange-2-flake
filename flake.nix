@@ -1,14 +1,18 @@
 {
-  description = "Flake for Exiled Exchange 2";
+  description = "Satisfactory Modeler Flake";
 
-  inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+  };
 
   outputs = {
     self,
     nixpkgs,
     ...
-  }: {
-    nixosModules.exiled-exchange-2 = import ./module.nix;
-    homeModules.exiled-exchange-2 = import ./module.nix;
+  }: let
+    system = "x86_64-linux";
+    pkgs = import nixpkgs {inherit system;};
+  in {
+    packages."${system}".exiled-exchange-2 = pkgs.callPackage ./exiled-exchange-2 {};
   };
 }
