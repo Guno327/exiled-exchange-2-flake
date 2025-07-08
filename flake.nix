@@ -9,6 +9,6 @@
     ...
   }: {
     nixosModules.exiled-exchange-2 = import ./module.nix;
-    homeModules.exiled-exchange-2 = import ./modules.nix;
+    homeModules.exiled-exchange-2 = import ./module.nix;
   };
 }
